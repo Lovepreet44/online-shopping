@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Homepage1 from "./pages/homepage/Homepage1";
+import { Route, Switch } from "react-router-dom";
+import shop from "./pages/shop/shop.js";
 function App() {
+  const contactus = (props) => {
+    console.log(props);
+    return <div>contactus page</div>;
+  };
+  const contact2 = () => {
+    return <div>contactus page 2</div>;
+  };
+  const contact3 = () => {
+    return <div>contactus page 3</div>;
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/" component={Homepage1} />
+        <Route exact path="/shop" component={shop} />
+        <Route exact path="/contact2" component={contact2} />
+        <Route exact path="/contact3" component={contact3} />
+      </Switch>
+    </>
   );
 }
 
