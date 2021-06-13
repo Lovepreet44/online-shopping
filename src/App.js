@@ -2,6 +2,7 @@ import "./App.css";
 import Homepage1 from "./pages/homepage/Homepage1";
 import { Route, Switch } from "react-router-dom";
 import shop from "./pages/shop/shop.js";
+import Header from "./components/header/header.component";
 function App() {
   const contactus = (props) => {
     console.log(props);
@@ -15,6 +16,7 @@ function App() {
   };
   return (
     <>
+      <Header />
       <Switch>
         <Route exact path="/" component={Homepage1} />
         <Route exact path="/shop" component={shop} />
